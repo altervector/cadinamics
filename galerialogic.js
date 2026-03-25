@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Funció per carregar dades des de la Netlify Function
     function fetchAirtable() {
         // Cridem a la funció que hem creat a Netlify
-        const url = `/.netlify/functions/get-articles?cat=${encodeURIComponent(catClau)}`;
+       const url = `https://cadialimentacio.netlify.app/.netlify/functions/get-articles?cat=${encodeURIComponent(catClau)}`;
 
         fetch(url)
         .then(response => {
