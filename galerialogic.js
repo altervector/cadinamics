@@ -8,40 +8,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!catClau) return;
 
-    const BASE_ID = 'app36XfjG6hxnjqxo';
-    const TABLE_NAME = 'Articles';
+    // Funció per carregar dades des de la Netlify Function
+    function fetchAirtable() {
+        // Cridem a la funció que hem creat a Netlify
+        const url = `/.netlify/functions/get-articles?cat=${encodeURIComponent(catClau)}`;
 
-    // NO posis el TOKEN aquí. El buscarem a la finestra (window)
-    const TOKEN = window.AIRTABLE_TOKEN;
-   
-
-    let allRecords = [];
-
-    // Función interna para cargar datos recursivamente
-    function fetchAirtable(offset = "") {
-        let url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}?filterByFormula=AND(LOWER({Cat})=LOWER('${catClau}'), {Web}=1)&sort[0][field]=id&sort[0][direction]=asc`;
-        
-        if (offset) {
-            url += `&offset=${offset}`;
-        }
-
-        fetch(url, { headers: { Authorization: `Bearer ${TOKEN}` } })
-        .then(response => response.json())
+        fetch(url)
+        .then(response => {
+            if (!response.ok) throw new Error("Error en la resposta de la funció");
+            return response.json();
+        })
         .then(data => {
-            allRecords = allRecords.concat(data.records);
-
-            // Si hay más de 100, Airtable devuelve un offset. Si existe, pedimos la siguiente tanda.
-            if (data.offset) {
-                fetchAirtable(data.offset);
+            if (data && data.records) {
+                processData(data.records);
             } else {
-                // Cuando ya no hay más páginas, procesamos los datos
-                processData(allRecords);
+                console.error("No s'han rebut registres vàlids.");
             }
         })
-        .catch(err => console.error("Error:", err));
+        .catch(err => console.error("Error de connexió:", err));
     }
 
-    // Tu lógica de renderizado original extraída a una función para que espere a tener todos los datos
+    // La teva lògica de processament original, sense canvis
     function processData(records) {
         if (!records || records.length === 0) return;
 
@@ -67,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         let html = '';
-            uniques.forEach(item => {
-            // Canviem la ruta base a GitHub Pages
+        uniques.forEach(item => {
+            // Ruta base a GitHub Pages (cadinamics)
             const baseRuta = "https://altervector.github.io/cadinamics/images/";
             const imgPath = item.foto ? `${baseRuta}${item.foto}` : `${baseRuta}default.jpg`;
 
@@ -79,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="${imgPath}" alt="${item.titol}" onerror="this.src='${baseRuta}Default.png'">
                     <div class="titol-item">${item.titol}</div>
                 </div>
-        `;
-    });
+            `;
+        });
         contenidor.innerHTML = html;
     }
 
-    // Iniciamos la carga
+    // Iniciem la càrrega
     fetchAirtable();
 });
