@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         // --- EL QUE HAS DE POSAR (4 línies) ---
-const baseRuta = "https://genecarles.github.io/cadiwebdinamicfiles/images/";
+const baseRuta = "https://altervector.github.io/cadinamics/images/";
 
 contenidor.innerHTML = `
     <h1>${info.TitolSub || ""}</h1>

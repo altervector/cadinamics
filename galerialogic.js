@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let html = '';
             uniques.forEach(item => {
             // Canviem la ruta base a GitHub Pages
-            const baseRuta = "https://genecarles.github.io/cadiwebdinamicfiles/images/";
+            const baseRuta = "https://altervector.github.io/cadinamics/images/";
             const imgPath = item.foto ? `${baseRuta}${item.foto}` : `${baseRuta}default.jpg`;
 
             html += `

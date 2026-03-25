@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerHTML = `
         <div class="capcalera-principal">
             <div class="contenidor-logo">
-                <img src="https://genecarles.github.io/cadiwebdinamicfiles/Icon/logotrans.png" alt="Logo Cadí Alimentació" class="logo">
+                <img src="https://altervector.github.io/cadinamics/Icon/logotrans.png" alt="Logo Cadí Alimentació" class="logo">
             </div>
             <div class="text-capcalera">
                 <p>
