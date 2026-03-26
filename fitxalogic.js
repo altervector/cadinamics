@@ -7,21 +7,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!subNomURL) return;
 
-    const BASE_ID = 'app36XfjG6hxnjqxo';
-    const TABLE_NAME = 'Articles';
-      // NO posis el TOKEN aquí. El buscarem a la finestra (window)
-    const TOKEN = window.AIRTABLE_TOKEN;
-
+    // Ara les peticions van a la nostra funció de Netlify
     const nomBusqueda = decodeURIComponent(subNomURL).trim();
-    
-    // CAMBIO CLAVE: Usamos FIND en lugar de igualdad directa. 
-    // Esto es inmune a los apóstrofes de TitolSub.
-    const formula = `AND(FIND("${nomBusqueda.replace(/"/g, '\\"')}", ARRAYJOIN({TitolSub})) > 0, {Web}=1)`;
-
-    const url = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}?filterByFormula=${encodeURIComponent(formula)}&sort[0][field]=id&sort[0][direction]=asc`;
+    const url = `https://cadialimentacio.netlify.app/.netlify/functions/get-articles?sub=${encodeURIComponent(nomBusqueda)}`;
 
     try {
-        const resposta = await fetch(url, { headers: { Authorization: `Bearer ${TOKEN}` } });
+        const resposta = await fetch(url);
+        if (!resposta.ok) throw new Error("Error en la resposta de la funció");
+        
         const data = await resposta.json();
         
         if (!data.records || data.records.length === 0) {
@@ -59,12 +52,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
         });
 
-        // --- EL QUE HAS DE POSAR (4 línies) ---
-const baseRuta = "https://altervector.github.io/cadinamics/images/";
+        const baseRuta = "https://altervector.github.io/cadinamics/images/";
 
-contenidor.innerHTML = `
-    <h1>${info.TitolSub || ""}</h1>
-    <img src="${baseRuta}${info.Subfoto}" class="imatge-fitxa-principal" onerror="this.src='${baseRuta}Default.png'">
+        contenidor.innerHTML = `
+            <h1>${info.TitolSub || ""}</h1>
+            <img src="${baseRuta}${info.Subfoto}" class="imatge-fitxa-principal" onerror="this.src='${baseRuta}Default.png'">
             <p class="descripcio-curta">${info.DescripcioSub || ""}</p>
 
             <div class="especificacions-bloc">
