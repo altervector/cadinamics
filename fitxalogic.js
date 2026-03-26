@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Ara les peticions van a la nostra funció de Netlify
     const nomBusqueda = decodeURIComponent(subNomURL).trim();
-    const url = `https://cadialimentacio.netlify.app/.netlify/functions/get-articles?sub=${encodeURIComponent(nomBusqueda)}`;
+    const url = `https://cadialimentacio.netlify.app/.netlify/functions/get-fitxa?sub=${encodeURIComponent(nomBusqueda)}`;
 
     try {
         const resposta = await fetch(url);
