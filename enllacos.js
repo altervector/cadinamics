@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><a href="mailto:cadimobil2@gmail.com"> <img src="https://altervector.github.io/cadinamics/Icon/Icomail.png" alt="e-mail" class="icona-app">Envia un correu</a></p>
         </div>
         <hr class="separador-hr">
+        <hr class="separador-hr">
     `;
 
     const contenidor = document.getElementById("bloc-enllacos-dinamic");
