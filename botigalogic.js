@@ -3,7 +3,7 @@ const htmlBotiga = `
 <div class="bloc-imatges">
     <div class="columna-esquerra">
         <a href="https://cadialimentacio.netlify.app/principal.html?cat=ver" class="enllac-imatge-fix"> 
-            <img src="https://altervector.github.io/cadinamics/images/Verdures.webp" alt="Verdura" class="imatge-petita">
+            <img src="https://altervector.github.io/cadinamics/images/Verdura.webp" alt="Verdures" class="imatge-petita">
             <span class="etiqueta-categoria">Verdures</span>
         </a>
         <a href="https://cadialimentacio.netlify.app/principal.html?cat=pre" class="enllac-imatge-fix">
