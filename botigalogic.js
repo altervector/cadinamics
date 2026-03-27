@@ -28,9 +28,6 @@ const htmlBotiga = `
     <em>Productes seleccionats de primera qualitat <br><span style="display:block; text-align:center;"> Servei proper i professional</span></em>
 </p>
 <hr class="separador-hr">
-<div class="elaboradors">
-    <img src="https://altervector.github.io/cadinamics/images/elaboradors.webp" alt="elaboradors">
-</div>
 `;
 
 // Injectem tot el bloc al "forat" de l'HTML
