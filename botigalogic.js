@@ -1,5 +1,5 @@
 const htmlBotiga = `
-<hr class="separador-hr">
+
 <div class="bloc-imatges">
     <div class="columna-esquerra">
         <a href="https://cadialimentacio.netlify.app/general.html?cat=ver" class="enllac-imatge-fix"> 
@@ -27,7 +27,7 @@ const htmlBotiga = `
 <p style="max-width:400px; width:90%; margin: 10px auto 10px auto; font-size: 14px; color:#555; text-align: center;">
     <em>Productes seleccionats de primera qualitat <br><span style="display:block; text-align:center;"> Servei proper i professional</span></em>
 </p>
-<hr class="separador-hr">
+
 `;
 
 // Injectem tot el bloc al "forat" de l'HTML
