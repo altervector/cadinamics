@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const enllacosHTML = `
-        <hr class="separador-hr">
+        
         <div class="bloc-enllacos">
             <p><a href="https://altervector.github.io/cadinamics/PROMO.pdf"><img src="https://altervector.github.io/cadinamics/Icon/Icopdf.png" alt="Pdf" class="icona-app">Descarrega el catàleg complet (PDF)</a></p>
             <p><a href="https://www.instagram.com/cadicarles" target="_blank"><img src="https://altervector.github.io/cadinamics/Icon/Icoinsta.png" alt="Instagram" class="icona-app">Instagram: @cadicarles</a></p>

@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
         <hr class="separador-hr">
+        <hr class="separador-hr">
     `;
 
     const el = document.getElementById("capcalera-dinamica");
