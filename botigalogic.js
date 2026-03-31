@@ -96,7 +96,7 @@ if (MOSTRAR_BLOQUEIG) {
                 <p style="font-size: 0.9rem; color: #666;">Per renovar el servei o realitzar una comanda, posa't en contacte amb el suport tècnic.</p>
                 
                 <div class="botons-grup">
-                    <a href="mailto:el-teu-email@domini.com?subject=Consulta%20Renovacio%20Cataleg" class="btn-bloqueig btn-mail">Renovar Servei</a>
+                    <a href="mailto:suport@altervector.com?subject=Consulta%20Renovacio%20Cataleg" class="btn-bloqueig btn-mail">Renovar Servei</a>
                     <a href="index.html" class="btn-bloqueig btn-tornar">Tornar a l'Inici</a>
                 </div>
             </div>
