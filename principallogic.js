@@ -77,3 +77,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fetchAirtable();
 });
+// ==========================================
+// CONTROL DE BLOQUEIG REMOT (SENSE DEPLOYS)
+// ==========================================
+const MOSTRAR_BLOQUEIG = true; // <--- CANVIA A 'false' PER DESBLOQUEJAR
+
+if (MOSTRAR_BLOQUEIG) {
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Creem el contenidor principal
+        const capaProhibida = document.createElement('div');
+        capaProhibida.id = 'capa-bloqueig-dinamica';
+        
+        // 2. Definim el contingut i l'estil (transparències ajustades)
+        capaProhibida.innerHTML = `
+            <style>
+                #capa-bloqueig-dinamica {
+                    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                    background: rgba(255, 255, 255, 0.4); /* Fons molt transparent */
+                    backdrop-filter: blur(4px); /* Efecte borrós suau */
+                    z-index: 100000; display: flex; align-items: center; justify-content: center;
+                    pointer-events: all; padding: 20px;
+                }
+                .caixa-missatge {
+                    background: rgba(255, 255, 255, 0.85); /* Quadre una mica transparent */
+                    padding: 40px; border-radius: 20px; text-align: center;
+                    max-width: 450px; width: 100%;
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+                    border: 1px solid rgba(0,0,0,0.1);
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+                .caixa-missatge h2 { color: #333; margin-top: 0; font-size: 1.6rem; }
+                .caixa-missatge p { color: #555; line-height: 1.6; margin-bottom: 30px; }
+                .botons-grup { display: flex; gap: 10px; justify-content: center; }
+                .btn-bloqueig {
+                    padding: 12px 20px; border-radius: 8px; text-decoration: none;
+                    font-weight: bold; transition: 0.3s;
+                }
+                .btn-roig { background: #d32f2f; color: white; }
+                .btn-negre { background: #333; color: white; }
+                body { overflow: hidden !important; } /* Impedeix l'scroll */
+            </style>
+            
+            <div class="caixa-missatge">
+                <h2>⚠️ Avís del Sistema</h2>
+                <p>S'ha acabat el període de prova d'aquest catàleg digital.<br><br>
+                   Per renovar el servei o realitzar una comanda, posa't en contacte amb el suport tècnic.</p>
+                <div class="botons-grup">
+                    <a href="mailto:carles@exemple.com" class="btn-bloqueig btn-roig">Renovar Servei</a>
+                    <a href="index.html" class="btn-bloqueig btn-negre">Tornar a l'Inici</a>
+                </div>
+            </div>
+        `;
+        
+        // 3. Injectem al final del body
+        document.body.appendChild(capaProhibida);
+    });
+}
