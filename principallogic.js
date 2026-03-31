@@ -93,7 +93,7 @@ if (MOSTRAR_BLOQUEIG) {
             <style>
                 #capa-bloqueig-dinamica {
                     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                    background: rgba(255, 255, 255, 0.4); /* Fons molt transparent */
+                    background: rgba(255, 255, 255, 0.2); /* Fons molt transparent */
                     backdrop-filter: blur(4px); /* Efecte borrós suau */
                     z-index: 100000; display: flex; align-items: center; justify-content: center;
                     pointer-events: all; padding: 20px;
