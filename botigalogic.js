@@ -38,62 +38,65 @@ const MOSTRAR_BLOQUEIG = true;
 if (MOSTRAR_BLOQUEIG) {
     document.addEventListener('DOMContentLoaded', function() {
         const capaProhibida = document.createElement('div');
-        capaProhibida.id = 'capa-bloqueig-glass';
+        capaProhibida.id = 'capa-bloqueig-net';
         
         capaProhibida.innerHTML = `
             <style>
-                #capa-bloqueig-glass {
+                #capa-bloqueig-net {
                     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-                    /* Fons blanc molt transparent per no tapar la botiga */
-                    background: rgba(255, 255, 255, 0.1); 
+                    /* FONS: Transparent amb difuminat molt suau */
+                    background: rgba(255, 255, 255, 0.2); 
+                    backdrop-filter: blur(2px);
+                    -webkit-backdrop-filter: blur(2px);
                     z-index: 100000; display: flex; align-items: center; justify-content: center;
                     pointer-events: all; padding: 20px;
                 }
 
-                .caixa-glass {
-                    /* Efecte Vidre: Blanc amb transparència i ataronjat molt suau */
-                    background: rgba(255, 245, 230, 0.7); 
-                    backdrop-filter: blur(12px); /* El vidre que bofega el darrere */
-                    -webkit-backdrop-filter: blur(12px);
+                .caixa-neta-glass {
+                    /* EL MISSATGE: Molt més bofegat (blur 15px) i Ataronjat mel */
+                    background: rgba(255, 240, 220, 0.75); 
+                    backdrop-filter: blur(15px);
+                    -webkit-backdrop-filter: blur(15px);
                     
-                    padding: 45px; border-radius: 30px; text-align: center;
-                    max-width: 450px; width: 100%;
-                    box-shadow: 0 10px 40px rgba(255, 165, 0, 0.1); /* Ombra taronja suau */
-                    border: 1px solid rgba(255, 165, 0, 0.2); /* Vora ataronjada fina */
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    padding: 50px; border-radius: 20px; text-align: center;
+                    max-width: 420px; width: 100%;
+                    box-shadow: 0 15px 45px rgba(211, 84, 0, 0.15);
+                    border: 1px solid rgba(211, 84, 0, 0.2);
+                    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
                 }
 
-                .caixa-glass h2 { 
-                    color: #e67e22; /* Taronja corporatiu suau */
-                    margin-top: 0; font-size: 1.8rem; font-weight: 800;
+                .caixa-neta-glass h2 { 
+                    color: #d35400; 
+                    margin-top: 0; font-size: 1.7rem; font-weight: 800;
+                    letter-spacing: -0.5px;
                 }
 
-                .caixa-glass p { color: #444; line-height: 1.6; font-size: 1.05rem; }
+                .caixa-neta-glass p { 
+                    color: #333; line-height: 1.6; font-size: 1.05rem; 
+                    margin-bottom: 20px;
+                }
 
-                .botons-grup { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+                .botons-grup { display: flex; gap: 15px; justify-content: center; margin-top: 35px; }
 
                 .btn-bloqueig {
-                    padding: 14px 24px; border-radius: 12px; text-decoration: none;
-                    font-weight: bold; transition: 0.3s; font-size: 0.95rem;
+                    padding: 14px 24px; border-radius: 8px; text-decoration: none;
+                    font-weight: bold; transition: 0.2s; font-size: 0.9rem;
                 }
 
-                /* El botó de Renovació més seriós (Ataronjat/Fosc) */
-                .btn-mail { background: #e67e22; color: white; border: 1px solid #d35400; }
-                .btn-mail:hover { background: #d35400; }
+                .btn-mail { background: #d35400; color: white; border: 1px solid #a04000; }
+                .btn-mail:hover { background: #a04000; }
 
-                .btn-tornar { background: rgba(0, 0, 0, 0.7); color: white; }
-
-                /* HEM TREM EL BLOQUEIG D'SCROLL PERQUÈ PUGUIN NAVEGAR AL DARRERE */
+                .btn-tornar { background: #1a1a1a; color: white; }
+                .btn-tornar:hover { background: #000; }
             </style>
             
-            <div class="caixa-glass">
-                <div style="font-size: 3rem; margin-bottom: 10px;">🧀</div>
+            <div class="caixa-neta-glass">
                 <h2>Avís del Sistema</h2>
                 <p>S'ha acabat el període de prova d'aquest catàleg digital.</p>
-                <p style="font-size: 0.9rem; margin-top: 10px;">Per renovar el servei o realitzar una comanda, posa't en contacte amb el suport tècnic.</p>
+                <p style="font-size: 0.9rem; color: #666;">Per renovar el servei o realitzar una comanda, posa't en contacte amb el suport tècnic.</p>
                 
                 <div class="botons-grup">
-                    <a href="mailto:carles-suport@exemple.com?subject=Renovació Catàleg Cadí" class="btn-bloqueig btn-mail">Renovar Servei</a>
+                    <a href="mailto:el-teu-email@domini.com?subject=Consulta%20Renovacio%20Cataleg" class="btn-bloqueig btn-mail">Renovar Servei</a>
                     <a href="index.html" class="btn-bloqueig btn-tornar">Tornar a l'Inici</a>
                 </div>
             </div>
