@@ -60,14 +60,14 @@ a {
    ============================================================ */
 
 .text-capcalera {
-    width: 250px;
+    width: 240px;
     position: absolute;
-    top: 87px;    /* Distància des de dalt del pare */
-    left: 90px;   /* Distància des de l'esquerra del pare */
+    top: 75px;    /* Distància des de dalt del pare */
+    left: 100px;   /* Distància des de l'esquerra del pare */
 } 
 
 .text-capcalera p {
-    font-size: 13px;
+    font-size: 14px;
     color: #111;
     text-align: center;
     margin: 0;
