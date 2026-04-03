@@ -277,15 +277,7 @@ color: #0056b3;
     margin: 5px 0 0 0;
 }
 
-.enllac-tornar {
-    margin-top: 20px;
-    text-align: center;
-}
-.enllac-tornar a {
-    color: #0056b3;
-    text-decoration: none;
-    font-size: 14px;
-}
+
 
 /* 15. PÀGINES DE FITXA FINAL (PRODUCTE - Plantilla Lluís Congelats) */
 .fitxa-producte {
@@ -358,15 +350,7 @@ table th {
     margin-top: 10px;
 }
 
-.enllac-tornar-fitxa {
-    margin-top: 30px;
-    text-align: center;
-}
-.enllac-tornar-fitxa a {
-    color: #0056b3;
-    text-decoration: none;
-    font-size: 14px;
-}
+
 
 
 /* --- CORRECCIÓ INDEX: TORNADA DE MENORCA --- */
