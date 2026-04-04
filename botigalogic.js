@@ -33,7 +33,7 @@ const htmlBotiga = `
 // Injectem tot el bloc al "forat" de l'HTML
 document.getElementById('contingut-botiga').innerHTML = htmlBotiga;
 
-const MOSTRAR_BLOQUEIG = false; 
+const MOSTRAR_BLOQUEIG = true; 
 
 if (MOSTRAR_BLOQUEIG) {
     document.addEventListener('DOMContentLoaded', function() {
