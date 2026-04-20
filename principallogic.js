@@ -123,7 +123,7 @@ if (MOSTRAR_BLOQUEIG) {
                 <p>S'ha acabat el període de prova d'aquest catàleg digital.<br><br>
                    Per renovar el servei o realitzar una comanda, posa't en contacte amb el suport tècnic.</p>
                 <div class="botons-grup">
-                    <a href="mailto:carles@exemple.com" class="btn-bloqueig btn-roig">Renovar Servei</a>
+                    <a href="mailto:suport@altervector.com" class="btn-bloqueig btn-roig">Renovar Servei</a>
                     <a href="index.html" class="btn-bloqueig btn-negre">Tornar a l'Inici</a>
                 </div>
             </div>
