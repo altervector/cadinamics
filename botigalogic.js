@@ -2,7 +2,7 @@ const htmlBotiga = `
 
 <div class="bloc-imatges">
     <div class="columna-esquerra">
-        <a href="https://cadialimentacio.pages.dev/principal.html?cat=ver" class="enllac-imatge-fix"> 
+        <a href="principal.html?cat=ver" class="enllac-imatge-fix"> 
             <img src="https://altervector.github.io/cadinamics/images/PICATVer.webp" alt="Verdures" class="imatge-petita">
             <span class="etiqueta-categoria">Verdures</span>
         </a>
